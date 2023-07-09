@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\FormulairController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CartController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +17,17 @@ use App\Http\Controllers\CartController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'Home']);
 
-Route::get('/product', [ProductController::class, 'index']);
 
-Route::get('/product/{id}', [ProductController::class, 'show']);
+Route::get('/product/{id}', [ProductController::class, 'ProductId']);
 
-Route::get('/cart', [CartController::class, 'index']);
+
+
+Route::get('/product-list', [ProductController::class, 'Product_list']);
+
+
+Route::get('/cart', [CartController::class, 'Cart']);
+
+
+Route::get('/formulair', [FormulairController::class, 'formulair']);

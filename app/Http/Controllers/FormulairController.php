@@ -6,12 +6,13 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
-class CartController extends BaseController
+class FormulairController extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-    public function Cart()
+
+    public function formulair()
     {
         // ce que fait le controller
-        return view('cart'); // On indique la vue ici
+        return view('formulair'); // On indique la vue ici
     }
 }

@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 
-class ProductController extends Controller
+class ProductController extends BaseController
 {
-    //
-    public function index()
-    {
-        return view('product-list');
-}
+    use AuthorizesRequests, ValidatesRequests;
 
-    public function show($id)
+    public function ProductId(string $id)
     {
-        return view('product-details', ['id' => $id]);
+
+        // ce que fait le controller
+        return view('product-details',['id'=>$id]); // On indique la vue ici
+    }
+
+    public function Product_list()
+    {
+        // ce que fait le controller
+        return view('product-list'); // On indique la vue ici
+    }
 }
