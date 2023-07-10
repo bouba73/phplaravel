@@ -10,14 +10,15 @@ class HomeController extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    public function Home()
-
+    public function home()
     {
-        //requete brut
-        $products = DB::select('SELECT * FROM product');
-        return view('homepage', ['products' => $products]);
+        // Requête pour les produits de la page d'accueil
+        $products = DB::select('SELECT * FROM product LIMIT 6');
 
-        // ce que fait le controller
-        return view('homepage'); // On indique la vue ici
+        // Requête pour les produits d'offre
+        $topProducts = DB::select('SELECT * FROM product ORDER BY id_produit DESC LIMIT 3');
+
+        return view('homepage', ['products' => $products, 'topProducts' => $topProducts]);
     }
+
 }

@@ -13,7 +13,7 @@
                 <h2 class="title1"><a href="#">LE MOiS DU PONTALON</a></h2>
                 @foreach ($products as $product)
                 <div class="card">
-                    <img class="img" src="{{ asset($product->image_produit) }}" alt="Pantalon d'équitation">
+                    <img class="img" src="{{asset($product->image_produit)}}" alt="Pantalon d'équitation">
                     <h4 class="information"><a href="#">{{ $product->nom_produit }}</a></h4>
                     <p class="prace">{{ $product->prix }}<strong>€</strong></p>
                     <div class="space">
@@ -34,11 +34,12 @@
                     <h2><a href="#">les soldes</a></h2>
                     <i class="fa-solid fa-star cheked1"></i>
                 </div>
+                @foreach ($topProducts as $product)
                 <div class="item">
-                    <img src="{{ asset('assets/images/produits/gpa.jpg')}}" alt="Bombe">
+                    <img src="{{asset($product->image_produit)}}"  alt="Bombe">
                     <div class="item-infos">
-                        <h3><a href="#">Bombe</a></h3>
-                        <p class="prix-info">328<strong>€</strong></p>
+                        <h3><a href="#">{{ $product->nom_produit }}</a></h3>
+                        <p class="prix-info">{{ $product->prix }}<strong>€</strong></p>
                         <div class="star"><i class="fa-solid fa-star cheked"></i>
                             <i class="fa-solid fa-star cheked"></i>
                             <i class="fa-solid fa-star cheked"></i>
@@ -47,33 +48,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <img src="{{ asset('assets/images/produits/selle western.jpg')}}" alt="selle-Western">
-                    <div class="item-infos">
-                        <h3><a href="#">selle-Western</a></h3>
-                        <p class="prix-info">1071<strong>€</strong></p>
-                        <div class="star">
-                            <i class="fa-solid fa-star cheked"></i>
-                            <i class="fa-solid fa-star cheked"></i>
-                            <i class="fa-solid fa-star cheked"></i>
-                            <i class="fa-solid fa-star cheked"></i>
-                            <i class="fa-solid fa-star cheked2"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets/images/produits/tapis ronzon.png')}}" alt="Hôtel Tout bleu est Blanc">
-                    <div class="item-infos">
-                        <h3><a href="#">Tapis feutre RONZON</a></h3>
-                        <p class="prix-info">168<strong>€</strong></p>
-                        <div class="star"><i class="fa-solid fa-star cheked"></i>
-                            <i class="fa-solid fa-star cheked"></i>
-                            <i class="fa-solid fa-star cheked"></i>
-                            <i class="fa-solid fa-star cheked"></i>
-                            <i class="fa-solid fa-star cheked2"></i>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </section>
 
