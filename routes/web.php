@@ -31,3 +31,8 @@ Route::get('/cart', [CartController::class, 'Cart']);
 
 
 Route::get('/formulair', [FormulairController::class, 'formulair']);
+
+
+
+Route::get('/product-details./{id}', 'ProductDetailController@details')->name('product.details');
+

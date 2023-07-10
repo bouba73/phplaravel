@@ -7,13 +7,10 @@
 @section('product-details')
     <div class="container">
         <div class="detail_product">
-            <img
-                src="https://www.laboutiqueducavalier.com/44545-large_default/masque-anti-mouche-anti-uv-cheval-de-trait.jpg"
-                alt="Image ">
-            <h3>Selle Western </h3>
-            <p>Prix du produit : 19,99€</p>
+            <img src=""{{ asset($product->image_produit) }}alt="Image ">
+            <h3>{{ $product->nom_produit }} </h3>
+            <p>Prix du produit : {{ $product->prix_produit }}</p>
             <p>La grande selle</p>
-
             <form method="get" action="cart.php">
                 <input type="hidden" name="product_id" value="1">
                 <input type="hidden" name="product_name" value="Nom du produit">

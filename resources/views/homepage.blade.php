@@ -60,39 +60,18 @@
         </a>
         <section class="section3" id="Activites">
             <div class="activites">
+                @foreach ($lastProducts as $product)
                 <div class="global1">
+
                     <div class="acti1">
-                        <img src="{{ asset('assets/images/produits/produit anti-mouch.jpg')}}" alt="Produit anti-mouches">
+                        <img src="{{asset($product->image_produit)}}" alt="Produit anti-mouches">
                         <h3>
-                            <a href="#"> Produit anti-mouches</a>
+                            <a href="#"> {{ $product->nom_produit }}</a>
                         </h3>
                     </div>
-                    <div class="acti2">
-                        <div class="acti_item" id="activite2">
-                            <img src="{{ asset('assets/images/produits/masque-anti-mouche.jpg')}}" alt="Anti-mouches">
-                            <h3><a href="#">Anti-mouches</a> </h3>
-                        </div>
-                        <div class="acti_item2" id="activite3">
-                            <img src="{{ asset('assets/images/produits/saide poull.jpg')}}" alt="Side-pull">
-                            <h3>
-                                <a href="#">Side-pull</a>
-                            </h3>
-                        </div>
-                    </div>
+
                 </div>
-                <div class="global2">
-                    <div class="acti1">
-                        <img src="{{ asset('assets/images/produits/etrier.jpg')}}" alt="ETRIERS">
-                        <h3>
-                            <a href="#">ETRIERS</a>
-                        </h3>
-                    </div>
-                    <div class="acti1">
-                        <img src="{{ asset('assets/images/produits/saide poull.jpg')}}" alt="ETRIERS">
-                        <h3>
-                            <a href="#">ETRIERS</a>
-                        </h3>
-                    </div>
+                @endforeach
             </div>
         </section>
         <!--Footer-->

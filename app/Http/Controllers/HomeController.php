@@ -17,8 +17,10 @@ class HomeController extends BaseController
 
         // Requête pour les produits d'offre
         $topProducts = DB::select('SELECT * FROM product ORDER BY id_produit DESC LIMIT 3');
+        //requete pour les recommander
+        $lastProducts = DB::select('SELECT * FROM product ORDER BY id_produit DESC LIMIT 4');
 
-        return view('homepage', ['products' => $products, 'topProducts' => $topProducts]);
+        return view('homepage', ['products' => $products, 'topProducts' => $topProducts,'lastProducts' => $lastProducts]);
     }
 
 }
