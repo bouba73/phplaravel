@@ -4,12 +4,13 @@
 @section ('title')
     Détail product
 @endsection
-@section('product-details')
+@section('content')
+
     <div class="container">
         <div class="detail_product">
-            <img src=""{{ asset($product->image_produit) }}alt="Image ">
-            <h3>{{ $product->nom_produit }} </h3>
-            <p>Prix du produit : {{ $product->prix_produit }}</p>
+            <img src="{{ asset ($products ->image_produit) }}" alt="Image ">
+            <h3>{{ $products->nom_produit }} </h3>
+            <p>Prix du produit : {{ $products->prix }}</p>
             <p>La grande selle</p>
             <form method="get" action="cart.php">
                 <input type="hidden" name="product_id" value="1">
@@ -25,4 +26,5 @@
             </form>
         </div>
     </div>
-@endsection
+    @endsection
+

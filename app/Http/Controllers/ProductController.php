@@ -14,20 +14,7 @@ class ProductController extends BaseController
     {
         $products = DB::select('SELECT * FROM product');
 
-        // ce que fait le controller
-        return view('product-list',['products' => $products]); // On indique la vue ici
+
+        return view('product-list',['products' => $products]);
     }
-    public function details($id)
-{
-    $products = DB::select('SELECT * FROM product');
-    $product = Products::find($id);
-
-    if (!$product) {
-
-        abort(404);
-    }
-
-    // Passez les détails du produit à la vue
-    return view('product-detail', ['product' => $product]);
-}
 }

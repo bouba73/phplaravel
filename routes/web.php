@@ -4,6 +4,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\FormulairController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductDetailController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,5 +36,5 @@ Route::get('/formulair', [FormulairController::class, 'formulair']);
 
 
 
-Route::get('/product-details./{id}', 'ProductDetailController@details')->name('product.details');
+Route::get('/product-details/{id}', [ProductDetailController::class,'details'])->name('product.details');
 
